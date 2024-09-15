@@ -14,10 +14,10 @@ app.post("/events", async (req, res) => {
   events.push(event);
 
   const services = [
-    "http://localhost:4003/events",
-    "http://localhost:4001/events",
-    "http://localhost:4002/events",
-    "http://localhost:4004/events"
+    "http://posts-clusterip-srv:4001/events",
+    "http://comments-srv:4002/events",
+    "http://query-srv:4003/events",
+    "http://moderation-srv:4004/events"
   ];
 
   const axiosPromises = services.map((service) =>
